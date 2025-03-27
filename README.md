@@ -17,13 +17,13 @@ Este repositório contém o código e documentação para o projeto do robô de 
 - ✅ Robô configurado e inserido no ambiente Gazebo.
 - ❌ Integração com o `ros2_control` ainda pendente.
 
+![Gazebo](assets/gazebo.png)
+
 ---
 
 ## Dependências
 
-Para executar este projeto, instale:
-
-- ROS 2 (Galactic ou Humble recomendado)
+- ROS 2 Humble
 - Gazebo
 - Pacotes adicionais ROS 2:
   - `ros2_control`
