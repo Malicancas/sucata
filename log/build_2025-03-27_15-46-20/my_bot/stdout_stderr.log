@@ -1,8 +1,14 @@
 -- Install configuration: ""
 -- Execute custom install script
 -- Up-to-date symlink: /home/malicancas/my_bot/install/my_bot/share/my_bot/config/empty.yaml
+-- Up-to-date symlink: /home/malicancas/my_bot/install/my_bot/share/my_bot/config/my_controller.yaml
+-- Up-to-date symlink: /home/malicancas/my_bot/install/my_bot/share/my_bot/description/gazebo_control.xacro
+-- Up-to-date symlink: /home/malicancas/my_bot/install/my_bot/share/my_bot/description/guilassas.xacro
+-- Up-to-date symlink: /home/malicancas/my_bot/install/my_bot/share/my_bot/description/inertial_macros.xacro
 -- Up-to-date symlink: /home/malicancas/my_bot/install/my_bot/share/my_bot/description/robot.urdf.xacro
--- Symlinking: /home/malicancas/my_bot/install/my_bot/share/my_bot/description/robot_core.xacro
+-- Up-to-date symlink: /home/malicancas/my_bot/install/my_bot/share/my_bot/description/robot_core.xacro
+-- Up-to-date symlink: /home/malicancas/my_bot/install/my_bot/share/my_bot/description/ros2_control.xacro
+-- Up-to-date symlink: /home/malicancas/my_bot/install/my_bot/share/my_bot/launch/launch_sim.launch.py
 -- Up-to-date symlink: /home/malicancas/my_bot/install/my_bot/share/my_bot/launch/rsp.launch.py
 -- Up-to-date symlink: /home/malicancas/my_bot/install/my_bot/share/my_bot/worlds/empty.world
 -- Up-to-date symlink: /home/malicancas/my_bot/install/my_bot/share/ament_index/resource_index/package_run_dependencies/my_bot

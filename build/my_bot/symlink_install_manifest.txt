@@ -1,8 +1,5 @@
 /home/malicancas/my_bot/install/my_bot/share/my_bot/config/empty.yaml
 /home/malicancas/my_bot/install/my_bot/share/my_bot/config/my_controller.yaml
-/home/malicancas/my_bot/install/my_bot/share/my_bot/description/.ipynb_checkpoints/robot.urdf-checkpoint.xacro
-/home/malicancas/my_bot/install/my_bot/share/my_bot/description/.ipynb_checkpoints/robot_core-checkpoint.xacro
-/home/malicancas/my_bot/install/my_bot/share/my_bot/description/file.rviz
 /home/malicancas/my_bot/install/my_bot/share/my_bot/description/gazebo_control.xacro
 /home/malicancas/my_bot/install/my_bot/share/my_bot/description/guilassas.xacro
 /home/malicancas/my_bot/install/my_bot/share/my_bot/description/inertial_macros.xacro
