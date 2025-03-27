@@ -1,7 +1,40 @@
-## PROJETO ROS2
+# Projeto ROS 2
 
-This is a GitHub template. You can make your own copy by clicking the green "Use this template" button.
+Este repositório contém o código e documentação para o projeto do robô de 4 rodas, desenvolvido utilizando o framework ROS 2. O objetivo deste projeto é criar, simular e controlar o robô no ambiente Gazebo e implementar o `ros2_control` para gerenciar as funções do robô.
 
-It is recommended that you keep the repo/package name the same, but if you do change it, ensure you do a "Find all" using your IDE (or the built-in GitHub IDE by hitting the `.` key) and rename all instances of `my_bot` to whatever your project's name is.
+---
 
-Note that each directory currently has at least one file in it to ensure that git tracks the files (and, consequently, that a fresh clone has direcctories present for CMake to find). These example files can be removed if required (and the directories can be removed if `CMakeLists.txt` is adjusted accordingly).
+## Estrutura do Projeto
+
+- **Gazebo Simulation:** Simulação do robô utilizando o Gazebo.
+- **ROS2_control:** Planejado para configurar os controladores e interfaces necessárias.
+- **Código:** Scripts e nós ROS 2 para operar o robô.
+
+---
+
+## Estado Atual do Projeto
+
+- ✅ Robô configurado e inserido no ambiente Gazebo.
+- ❌ Integração com o `ros2_control` ainda pendente.
+
+---
+
+## Dependências
+
+Para executar este projeto, instale:
+
+- ROS 2 (Galactic ou Humble recomendado)
+- Gazebo
+- Pacotes adicionais ROS 2:
+  - `ros2_control`
+  - `robot_state_publisher`
+  - `joint_state_controller`
+
+---
+
+## Instalação
+
+1. Clone este repositório:
+
+   ```bash
+   git clone git@github.com:Malicancas/my_bot.git
