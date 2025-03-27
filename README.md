@@ -37,4 +37,4 @@ Este repositório contém o código e documentação para o projeto do robô de 
 1. Clone este repositório:
 
    ```bash
-   git clone git@github.com:Malicancas/my_bot.git
+   git clone https://github.com/Malicancas/my_bot.git
