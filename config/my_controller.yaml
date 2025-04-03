@@ -9,17 +9,15 @@ controller_manager:
     joint_broad:
       type: joint_state_broadcaster/JointStateBroadcaster
 
-      ## Directly below the controller_manager section
+diff_cont:
+  ros__parameters:
+    publish_rate: 30.0 
+    base_frame_id: base_link
 
-    diff_cont:
-      ros__parameters:
+    left_wheel_names: ['base_left_rear_wheel_joint', 'base_left_front_wheel_joint']
+    right_wheel_names: ['base_right_rear_wheel_joint', 'base_right_front_wheel_joint']
+    
+    wheel_separation: 0.0675
+    wheel_radius: 0.045
 
-        publish_rate: 30.0 # You can set this higher than the controller manager update rate, but it will be throttled
-        base_frame_id: base_link
-
-        left_wheel_names: ['base_left_rear_wheel_joint', 'base_left_front_wheel_joint']
-        right_wheel_names: ['base_right_rear_wheel_joint', 'base_right_front_wheel_joint']
-        wheel_separation: 0.0675
-        wheel_radius: 0.045
-
-        #use_stamped_vel: false
+    #use_stamped_vel: false
