@@ -20,7 +20,6 @@ Este repositório contém o código e documentação para o projeto do robô de 
 
 ---
 
-```markdown
 ![Gazebo](assets/gazebo.png)
 
 ## Dependências
