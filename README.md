@@ -15,15 +15,18 @@ Este repositório contém o código e documentação para o projeto do robô de 
 ## Estado Atual do Projeto
 
 - ✅ Robô configurado e inserido no ambiente Gazebo.
+- ✅ Controle via `teleop_keyboard` já funcional.
 - ❌ Integração com o `ros2_control` ainda pendente.
-
-![Gazebo](assets/gazebo.png)
 
 ---
 
+```markdown
+![Gazebo](assets/gazebo.png)
+
 ## Dependências
 
-- ROS 2 Humble
+- ROS 2 Jazzy
+- Ubuntu 24.04
 - Gazebo
 - Pacotes adicionais ROS 2:
   - `ros2_control`
@@ -35,6 +38,5 @@ Este repositório contém o código e documentação para o projeto do robô de 
 ## Instalação
 
 1. Clone este repositório:
-
    ```bash
    git clone https://github.com/Malicancas/my_bot.git
