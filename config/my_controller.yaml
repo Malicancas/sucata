@@ -1,5 +1,5 @@
 controller_manager:
-  ros_parameters:
+  ros__parameters:
     update_rate: 30
     use_sim_time: true
 
@@ -22,4 +22,4 @@ controller_manager:
         wheel_separation: 0.0675
         wheel_radius: 0.045
 
-        use_stamped_vel: false
+        #use_stamped_vel: false

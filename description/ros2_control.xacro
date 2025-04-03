@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-    <ros2_control name="IgnitionSystem" type="system">
-        <hardware>
-            <plugin>ign_ros2_control/IgnitionSystem</plugin>
-        </hardware>
+     <ros2_control name="GazeboSystem" type="system">
+            <hardware>
+                <plugin>gz_ros2_control/GazeboSimSystem</plugin>
+            </hardware>
         <joint name="base_left_rear_wheel_joint">
             <command_interface name="velocity">
                 <param name="min">-10</param>
@@ -41,7 +41,7 @@
 
     <!-- Definição do plugin Gazebo -->
     <gazebo>
-  <plugin filename="ign_ros2_control-system" name="ign_ros2_control::IgnitionROS2ControlPlugin">
+  <plugin name="gz_ros2_control::GazeboSimROS2ControlPlugin" filename="libgz_ros2_control-system.so">
     <parameters>$(find my_bot)/config/my_controller.yaml</parameters>
     <controller_manager_name>controller_manager</controller_manager_name>
   </plugin>
