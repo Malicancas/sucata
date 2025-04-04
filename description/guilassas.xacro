@@ -30,24 +30,6 @@
         </xacro:inertial_box>
     </link>
 
-    <link name="lidar">
-        <visual>
-            <geometry>
-                <cylinder  radius="0.025" length="0.02"/>
-            </geometry>
-            <origin xyz="0 0 0" rpy= "0 0 0" />
-            <material name="grey" />
-        </visual>
-
-        <collision>
-            <geometry>
-                <cylinder  radius="0.025" length="0.02"/>
-            </geometry>
-            <origin xyz="0 0 0" rpy= "0 0 0" />
-        </collision>
-        
-    </link>
-
     <link name="left_rear_wheel">
         <visual>
             <geometry>
@@ -129,12 +111,6 @@
 
     </link>
 
-
-    <joint name="base_lidar_joint" type="fixed">
-        <parent link="base_link"/>
-        <child link="lidar" />
-        <origin xyz="0.05 0 0.11" rpy= "0 0 0" />
-    </joint>
 
     <joint name="base_left_rear_wheel_joint" type="continuous">
         <parent link="base_link"/>
