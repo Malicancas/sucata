@@ -1,4 +1,4 @@
-# Projeto ROS 2
+# Sucata - Ros2 Jazzy
 
 Este repositório contém o código e documentação para o projeto do robô de 4 rodas, desenvolvido utilizando o framework ROS 2. O objetivo deste projeto é criar, simular e controlar o robô no ambiente Gazebo e implementar o `ros2_control` para gerenciar as funções do robô.
 
