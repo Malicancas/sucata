@@ -42,7 +42,7 @@
     <!-- Definição do plugin Gazebo -->
     <gazebo>
   <plugin name="gz_ros2_control::GazeboSimROS2ControlPlugin" filename="libgz_ros2_control-system.so">
-    <parameters>$(find my_bot)/config/my_controller.yaml</parameters>
+    <parameters>$(find sucata)/config/my_controller.yaml</parameters>
     <controller_manager_name>controller_manager</controller_manager_name>
   </plugin>
 </gazebo>
