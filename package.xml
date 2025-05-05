@@ -7,11 +7,19 @@
   <maintainer email="my_email@email.com">MY NAME</maintainer>
   <license>TODO: License declaration</license>
 
+  <!-- Build tool dependency -->
   <buildtool_depend>ament_cmake</buildtool_depend>
 
+  <!-- Dependencies for Python nodes -->
+  <depend>rclpy</depend>
+  <depend>cv_bridge</depend>
+  <depend>sensor_msgs</depend>
+
+  <!-- Dependencies for testing -->
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>
 
+  <!-- Export information -->
   <export>
     <build_type>ament_cmake</build_type>
   </export>
