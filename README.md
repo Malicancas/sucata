@@ -16,6 +16,7 @@ Este repositório contém o código e documentação para o projeto do robô de 
 
 - ✅ Robô configurado e inserido no ambiente Gazebo.
 - ✅ Controle via `teleop_keyboard` já funcional.
+- ✅ Controle via `teleop_joy` já funcional.
 
 ---
 
