@@ -93,6 +93,23 @@ def generate_launch_description():
             remappings=[('/scan', '/laser_scan')]  # Remap o tópico do laser se necessário
     )
 
+    slam_tool = IncludeLaunchDescription(
+    PythonLaunchDescriptionSource([
+        os.path.join(
+            get_package_share_directory('slam_toolbox'),
+            'launch/online_async_launch.py'
+        )
+    ]),
+    launch_arguments={
+        'use_sim_time': 'true',
+        'params_file': os.path.join(
+            get_package_share_directory(package_name),
+            'config/mapper_params_online_async.yaml'
+        )
+    }.items()
+)
+
+
     return LaunchDescription([
         rsp,
         world_arg,
@@ -101,4 +118,7 @@ def generate_launch_description():
         diff_drive_spawner,
         joint_broad_spawner,
         ros_gz_bridge,
+        teleop,
+        rviz_node,
+        #slam_tool,
     ])

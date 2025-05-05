@@ -21,8 +21,8 @@ teleop_node:
       yaw: 1.0
 
 
-    enable_button: 6
-    enable_turbo_button: 7
+    enable_button: 1
+    enable_turbo_button: 0
 
     require_enable_button: true
 
