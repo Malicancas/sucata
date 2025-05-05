@@ -67,6 +67,15 @@ def generate_launch_description():
         arguments=["joint_broad"],
     )
 
+    teleop = Node(
+    package='teleop_twist_keyboard',
+    executable='teleop_twist_keyboard',
+    output='screen',
+    prefix='xterm -e',  # Opcional para terminal dedicado
+    parameters=[{'stamped': True}],
+    remappings=[('cmd_vel', 'diff_cont/cmd_vel')]
+)
+
 
     bridge_params = os.path.join(get_package_share_directory(package_name),'config','gz_bridge.yaml')
     ros_gz_bridge = Node(
@@ -89,4 +98,5 @@ def generate_launch_description():
         diff_drive_spawner,
         joint_broad_spawner,
         ros_gz_bridge,
+        teleop,
     ])
