@@ -8,18 +8,19 @@ from launch.substitutions import LaunchConfiguration
 
 def generate_launch_description():
 
-
-    # Include the robot_state_publisher launch file, provided by our own package. Force sim time to be enabled
-    # !!! MAKE SURE YOU SET THE PACKAGE NAME CORRECTLY !!!
-
-    package_name='sucata' #<--- CHANGE ME
+    package_name='sucata'
 
     rsp = IncludeLaunchDescription(
                 PythonLaunchDescriptionSource([os.path.join(
                     get_package_share_directory(package_name),'launch','rsp.launch.py'
                 )]), launch_arguments={'use_sim_time': 'true', 'use_ros2_control': 'true'}.items()
     )
-
+    
+    joystick = IncludeLaunchDescription(
+                PythonLaunchDescriptionSource([os.path.join(
+                    get_package_share_directory(package_name),'launch','joystick.launch.py'
+                )])
+    )
     # Caminho para o mundo do Gazebo
     default_world = os.path.join(get_package_share_directory(package_name), 'worlds', 'empty.world')
     world = LaunchConfiguration('world')
@@ -56,12 +57,12 @@ def generate_launch_description():
     )
 
     teleop = Node(
-    package='teleop_twist_keyboard',
-    executable='teleop_twist_keyboard',
-    output='screen',
-    prefix='xterm -e',  # Opcional para terminal dedicado
-    parameters=[{'stamped': True}],
-    remappings=[('cmd_vel', 'diff_cont/cmd_vel')]
+        package='teleop_twist_keyboard',
+        executable='teleop_twist_keyboard',
+        output='screen',
+        prefix='xterm -e',  # Opcional para terminal dedicado
+        parameters=[{'stamped': True}],
+        remappings=[('cmd_vel', 'diff_cont/cmd_vel')]
 )
 
     # Bridge de tópicos
@@ -112,13 +113,14 @@ def generate_launch_description():
 
     return LaunchDescription([
         rsp,
+        joystick,
         world_arg,
         gazebo,
         spawn_entity,
         diff_drive_spawner,
         joint_broad_spawner,
         ros_gz_bridge,
-        teleop,
+        #teleop,
         rviz_node,
         #slam_tool,
     ])
