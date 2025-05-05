@@ -11,13 +11,13 @@
             <left_joint>base_left_front_wheel_joint</left_joint>
             <right_joint>base_right_rear_wheel_joint</right_joint>
             <right_joint>base_right_front_wheel_joint</right_joint>
-            <wheel_separation>0.0675</wheel_separation>
+            <wheel_separation>0.135</wheel_separation>
             <wheel_diameter>0.09</wheel_diameter>
 
 
             <!-- Limits -->
             <!-- <max_wheel_torque>200</max_wheel_torque> -->
-            <max_linear_acceleration>0.33</max_linear_acceleration>
+            <max_linear_acceleration>200</max_linear_acceleration>
 
             <!-- Input -->
             <topic>cmd_vel</topic>

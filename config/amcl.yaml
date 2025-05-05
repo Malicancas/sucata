@@ -1,0 +1,19 @@
+acml:
+  ros_parameters:
+    use_map_topic: true
+    map_topic: /map
+    odom_topic: /odom
+    base_frame_id: base_link
+    global_frame_id: map
+    laser_frame_id: lidar
+    min_particles: 500
+    max_particles: 5000
+    alpha1: 0.2
+    alpha2: 0.2
+    alpha3: 0.5
+    alpha4: 0.2
+    alpha5: 0.1
+    tf_broadcast: true
+    resample_interval: 2
+    kld_err: 0.02
+    kld_z: 0.99
