@@ -22,7 +22,7 @@ def generate_launch_description():
                 )])
     )
     # Caminho para o mundo do Gazebo
-    default_world = os.path.join(get_package_share_directory(package_name), 'worlds', 'empty.world')
+    default_world = os.path.join(get_package_share_directory(package_name), 'worlds', 'obstacles.world')
     world = LaunchConfiguration('world')
 
     world_arg = DeclareLaunchArgument(
@@ -38,7 +38,6 @@ def generate_launch_description():
         launch_arguments={'gz_args': ['-r -v4 ', world], 'on_exit_shutdown': 'true'}.items()
     )
 
-    # Executa o spawner do ros_gz_sim para o robô
     spawn_entity = Node(
         package='ros_gz_sim', executable='create',
         arguments=['-topic', 'robot_description', '-name', 'sucata', '-z', '0.1'],
@@ -56,22 +55,12 @@ def generate_launch_description():
         arguments=["joint_broad"],
     )
 
-    teleop = Node(
-        package='teleop_twist_keyboard',
-        executable='teleop_twist_keyboard',
-        output='screen',
-        prefix='xterm -e',  # Opcional para terminal dedicado
-        parameters=[{'stamped': True}],
-        remappings=[('cmd_vel', 'diff_cont/cmd_vel')]
-)
 
-    # Bridge de tópicos
     bridge_params = os.path.join(get_package_share_directory(package_name), 'config', 'gz_bridge.yaml')
     ros_gz_bridge = Node(
         package="ros_gz_bridge", executable="parameter_bridge",
         arguments=['--ros-args', '-p', f'config_file:={bridge_params}']
     )
-        # Lança o RViz com um ficheiro de configuração
 
     rviz_config = os.path.join(get_package_share_directory(package_name), 'config', 'andar_bot.rviz')
     rviz_node = Node(
@@ -120,7 +109,6 @@ def generate_launch_description():
         diff_drive_spawner,
         joint_broad_spawner,
         ros_gz_bridge,
-        #teleop,
-        rviz_node,
+        #rviz_node,
         #slam_tool,
     ])
