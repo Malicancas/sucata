@@ -205,12 +205,12 @@
       <name>box_2</name>
       <uri>file:///home/ze/Documents/projeto/src/sucata/models/aruco_box</uri>
     </include>
-  -->
+
     <include>
       <pose>2 0.5 0.25 0 0 1.57</pose>
       <name>box_3</name>
       <uri>file:///home/ze/Documents/projeto/src/sucata/models/aruco_box</uri>
     </include>
-
+  -->
   </world>
 </sdf>
