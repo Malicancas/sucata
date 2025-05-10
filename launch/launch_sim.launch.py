@@ -22,7 +22,7 @@ def generate_launch_description():
                 )])
     )
     # Caminho para o mundo do Gazebo
-    default_world = os.path.join(get_package_share_directory(package_name), 'worlds', 'obstacles.world')
+    default_world = os.path.join(get_package_share_directory(package_name), 'worlds', 'mundoArUco.sdf')
     world = LaunchConfiguration('world')
 
     world_arg = DeclareLaunchArgument(

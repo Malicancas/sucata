@@ -39,7 +39,6 @@
         </joint>
     </ros2_control>
 
-    <!-- Definição do plugin Gazebo -->
     <gazebo>
   <plugin name="gz_ros2_control::GazeboSimROS2ControlPlugin" filename="libgz_ros2_control-system.so">
     <parameters>$(find sucata)/config/my_controller.yaml</parameters>
