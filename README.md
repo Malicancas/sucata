@@ -1,41 +1,59 @@
-# Sucata - Ros2 Jazzy
+# Sucata - ROS 2 Jazzy
 
-Este repositório contém o código e documentação para o projeto do robô de 4 rodas, desenvolvido utilizando o framework ROS 2. O objetivo deste projeto é criar, simular e controlar o robô no ambiente Gazebo e implementar o `ros2_control` para gerenciar as funções do robô.
+Projeto open source de robótica móvel com ROS 2 para simulação, controle e integração de sensores num robô de 4 rodas.
 
----
+## Descrição
 
-## Estrutura do Projeto
+O **Sucata** é um robô de 4 rodas desenvolvido com o framework **ROS 2 (Jazzy)**, pensado para simulação no **Gazebo Harmonic** e controle via `ros2_control`. O projeto visa facilitar testes, integração de sensores (como LIDAR e camera para leitura de ArUco markers) e diferentes métodos de operação.
 
-- **Gazebo Simulation:** Simulação do robô utilizando o Gazebo.
-- **ROS2_control:** Planejado para configurar os controladores e interfaces necessárias.
-- **Código:** Scripts e nós ROS 2 para operar o robô.
+## Demonstração
 
----
+<p float="left">
+  <img src="assets/gazebo.png" width="250" alt="Simulação no Gazebo"/>
+  <img src="assets/aruco.png" width="250" alt="Detecção de ArUco"/>
+  <img src="assets/nunchuck.jpeg" width="250" alt="Controle Nunchuck BLE"/>
+</p>
 
-## Estado Atual do Projeto
+## Estado do Projeto
 
-- ✅ Robô configurado e inserido no ambiente Gazebo.
-- ✅ Controle via `teleop_keyboard` já funcional.
-- ✅ Controle via `teleop_joy` já funcional.
+- Robô configurado e simulado no Gazebo ✅
+- Controle funcional via `teleop_keyboard` ✅
+- Controle funcional via `teleop_joy` ✅
 
----
+## Tecnologias Utilizadas
 
-![Gazebo](assets/gazebo.png)
-
-## Dependências
-
-- ROS 2 Jazzy
-- Ubuntu 24.04
-- Gazebo
-- Pacotes adicionais ROS 2:
-  - `ros2_control`
-  - `robot_state_publisher`
-  - `joint_state_controller`
-
----
+- **ROS 2 Jazzy** (Ubuntu 24.04)
+- **Gazebo Harmonic**
+- `ros2_control`
+- `robot_state_publisher`
+- `joint_state_controller`
+- **LIDAR** (`urg_node2`)
+- **ArUco Markers** (`ros2_aruco`)
 
 ## Instalação
 
-1. Clone este repositório:
-   ```bash
-   git clone https://github.com/Malicancas/sucata.git
+### Clone o repositório e dependências:
+
+```bash
+mkdir -p ros2ws/src
+cd ros2ws/src
+git clone https://github.com/Malicancas/sucata.git
+git clone https://github.com/JMU-ROBOTICS-VIVA/ros2_aruco.git
+git clone https://github.com/Hokuyo-aut/urg_node2.git
+```
+
+### Build e execução:
+
+```bash
+cd ..
+colcon build
+source install/setup.bash
+ros2 launch sucata launch_sim.launch.py
+```
+
+### Para uso do controle BLE (Nunchuck):
+
+```bash
+git clone https://github.com/Malicancas/nunchuck-BLE
+# Siga as instruções no repositório para configuração
+```
