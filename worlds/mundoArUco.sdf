@@ -193,24 +193,109 @@
         </visual>
       </link>
     </model>
-
+    
     <include>
-      <pose>2 0 0.25 0 0 0</pose>
-      <name>box_1</name>
-      <uri>file:///home/ze/Documents/projeto/src/sucata/models/aruco_box</uri>
-    </include>
-<!--
-    <include>
-      <pose>2 -0.5 0.25 0 0 -1.57</pose>
-      <name>box_2</name>
-      <uri>file:///home/ze/Documents/projeto/src/sucata/models/aruco_box</uri>
+      <pose>1.5 0.5 0 0 0 1.57</pose>
+      <uri>
+        model://aruco3
+      </uri>
     </include>
 
-    <include>
-      <pose>2 0.5 0.25 0 0 1.57</pose>
-      <name>box_3</name>
-      <uri>file:///home/ze/Documents/projeto/src/sucata/models/aruco_box</uri>
-    </include>
-  -->
+    <!-- Paredes do quadrado -->
+    <model name="parede_norte">
+      <static>true</static>
+      <pose>0 2 0.5 0 0 0</pose> <!-- posição: centro em y=2, altura z=0.5 -->
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>4 0.1 1</size> <!-- comprimento 4, largura 0.1, altura 1 -->
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>4 0.1 1</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.5 0.5 0.5 1</ambient>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="parede_sul">
+      <static>true</static>
+      <pose>0 -2 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>4 0.1 1</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>4 0.1 1</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.5 0.5 0.5 1</ambient>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="parede_leste">
+      <static>true</static>
+      <pose>2 0 0.5 0 0 1.57</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>4 0.1 1</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>4 0.1 1</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.5 0.5 0.5 1</ambient>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="parede_oeste">
+      <static>true</static>
+      <pose>-2 0 0.5 0 0 1.57</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>4 0.1 1</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>4 0.1 1</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.5 0.5 0.5 1</ambient>
+          </material>
+        </visual>
+      </link>
+    </model>
   </world>
 </sdf>
