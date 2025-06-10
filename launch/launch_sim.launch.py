@@ -40,8 +40,7 @@ def generate_launch_description():
 
     spawn_entity = Node(
         package='ros_gz_sim', executable='create',
-        arguments=['-topic', 'robot_description', '-name', 'sucata', '-z', '0.1'],
-        output='screen'
+arguments=['-topic', 'robot_description', '-name', 'sucata', '-x', '-1', '-y', '-1', '-z', '0.1'],        output='screen'
     )
 
     # Spawna os controladores
@@ -97,8 +96,14 @@ def generate_launch_description():
             'config/mapper_params_online_async.yaml'
         )
     }.items()
-)
-
+    )
+    ekf_node = Node(
+        package='robot_localization',
+        executable='ekf_node',
+        name='ekf_filter_node',
+        output='screen',
+        parameters=[os.path.join(get_package_share_directory('sucata'), 'config', 'ekf.yaml')]
+    )
 
     return LaunchDescription([
         rsp,
@@ -111,4 +116,5 @@ def generate_launch_description():
         ros_gz_bridge,
         #rviz_node,
         #slam_tool,
+        ekf_node
     ])

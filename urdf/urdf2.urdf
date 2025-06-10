@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="sucata">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.0014564 0.00032017 0.02708"
+        rpy="0 0 0" />
+      <mass
+        value="0.29402" />
+      <inertia
+        ixx="0.00054056"
+        ixy="-1.0152E-08"
+        ixz="6.2563E-09"
+        iyy="0.0012531"
+        iyz="1.8536E-10"
+        izz="0.0017493" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sucata/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="verde_claro">
+        <color
+          rgba="0.5 1.0 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sucata/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="rodaFE">
+    <inertial>
+      <origin
+        xyz="4.33708624569817E-13 -0.0116000427495452 3.641063145432E-13"
+        rpy="0 0 0" />
+      <mass
+        value="0.0417534418555908" />
+      <inertia
+        ixx="2.90386422409949E-05"
+        ixy="-9.63351560872344E-17"
+        ixz="-1.16755116343788E-16"
+        iyy="4.53732000489224E-05"
+        iyz="-1.07562778637676E-16"
+        izz="2.90386422317585E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sucata/meshes/rodaFE.STL" />
+      </geometry>
+      <material
+        name="preto">
+        <color
+          rgba="0.1 0.1 0.1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sucata/meshes/rodaFE.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="roda_FE"
+    type="continuous">
+    <origin
+      xyz="0.0815 0.0973 0.0115"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="rodaFE" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      effort="10"
+      velocity="10" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="rodaTE">
+    <inertial>
+      <origin
+        xyz="4.33729441251529E-13 -0.0116000427495452 3.64085497861488E-13"
+        rpy="0 0 0" />
+      <mass
+        value="0.0417534418555908" />
+      <inertia
+        ixx="2.90386422409949E-05"
+        ixy="-9.63357589960055E-17"
+        ixz="-1.1675601730821E-16"
+        iyy="4.53732000489224E-05"
+        iyz="-1.07560295850229E-16"
+        izz="2.90386422317585E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sucata/meshes/rodaTE.STL" />
+      </geometry>
+      <material
+        name="preto">
+        <color
+          rgba="0.1 0.1 0.1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sucata/meshes/rodaTE.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="roda_TE"
+    type="continuous">
+    <origin
+      xyz="-0.0815 0.0973 0.0115"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="rodaTE" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      effort="10"
+      velocity="10" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="rodaFD">
+    <inertial>
+      <origin
+        xyz="-4.33708624569817E-13 0.0116000427495451 3.64003965858117E-13"
+        rpy="0 0 0" />
+      <mass
+        value="0.0417534418555909" />
+      <inertia
+        ixx="2.90386422409949E-05"
+        ixy="-9.63348726903862E-17"
+        ixz="1.16761894791001E-16"
+        iyy="4.53732000489225E-05"
+        iyz="1.07446973492785E-16"
+        izz="2.90386422317586E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sucata/meshes/rodaFD.STL" />
+      </geometry>
+      <material
+        name="preto">
+        <color
+          rgba="0.1 0.1 0.1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sucata/meshes/rodaFD.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="roda_FD"
+    type="continuous">
+    <origin
+      xyz="0.0814999999999993 -0.0973000000000006 0.0115000000000003"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="rodaFD" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      effort="10"
+      velocity="10" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="rodaTD">
+    <inertial>
+      <origin
+        xyz="-4.33729441251529E-13 0.0116000427495451 3.64019578369401E-13"
+        rpy="0 0 0" />
+      <mass
+        value="0.0417534418555909" />
+      <inertia
+        ixx="2.9038642240995E-05"
+        ixy="-9.63350567825533E-17"
+        ixz="1.16754828991177E-16"
+        iyy="4.53732000489225E-05"
+        iyz="1.07446496399349E-16"
+        izz="2.90386422317586E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sucata/meshes/rodaTD.STL" />
+      </geometry>
+      <material
+        name="preto">
+        <color
+          rgba="0.1 0.1 0.1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sucata/meshes/rodaTD.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="roda_TD"
+    type="continuous">
+    <origin
+      xyz="-0.0815 -0.0973 0.0115"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="rodaTD" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      effort="10"
+      velocity="10" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+</robot>

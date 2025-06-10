@@ -3,7 +3,7 @@
   Demo world with a widget displaying images coming from a camera sensor.
 -->
 <sdf version="1.8">
-  <world name="camera_sensor">
+  <world name="mundoArUco">
     <physics name="1ms" type="ignored">
       <max_step_size>0.001</max_step_size>
       <real_time_factor>1.0</real_time_factor>
@@ -193,13 +193,38 @@
         </visual>
       </link>
     </model>
-    
+   <!-- 
     <include>
       <pose>1.5 0.5 0 0 0 1.57</pose>
+      <static>true</static>
       <uri>
         model://aruco3
       </uri>
     </include>
+  -->
+    <model name="parede_obstaculo">
+      <static>true</static>
+      <pose>0 -0.75 0.5 0 0 1.57</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>1.5 0.1 1</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>1.5 0.1 1</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.5 0.5 0.5 1</ambient>
+          </material>
+        </visual>
+      </link>
+    </model>
 
     <!-- Paredes do quadrado -->
     <model name="parede_norte">

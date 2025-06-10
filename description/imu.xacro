@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+    <joint name="imu_joint" type="fixed">
+        <parent link="base_link"/>
+        <child link="imu"/>
+        <origin xyz="0 0 0.10" rpy="0 0 0"/>
+    </joint>
+
+    <link name="imu">
+        <visual>
+            <geometry>
+                <box size="0.02 0.02 0.005"/>
+            </geometry>
+            <origin xyz="0 0 0" rpy= "0 0 0" />
+            <material name="red" />
+        </visual>
+
+        <inertial>
+            <mass value="0.1"/>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+        </inertial>
+    </link>
+
+
+
+    <gazebo reference="imu">
+        <material>Gazebo/Black</material>
+        <sensor name="imu_sensor" type="imu">
+            <always_on>1</always_on>
+            <update_rate>50</update_rate>
+            <visualize>true</visualize>
+            <plugin filename="gz-sim-imu-system"
+                name="gz::sim::systems::Imu">
+            </plugin>
+        </sensor>
+    </gazebo>
+
+</robot>
