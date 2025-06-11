@@ -125,6 +125,7 @@
       </geometry>
     </collision>
   </link>
+  
 
   <!-- Joints -->
   <joint name="roda_FE" type="continuous">
@@ -162,5 +163,6 @@
     <limit effort="10" velocity="10" />
     <dynamics damping="0.1" friction="0.1" />
   </joint>
+
 
 </robot>
