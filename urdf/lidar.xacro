@@ -64,23 +64,22 @@
         <sensor name="laser" type="gpu_lidar">
             <pose> 0 0 0.06 0 0 0 </pose>
             <visualize>true</visualize>
-            <update_rate>30</update_rate>
+            <update_rate>10</update_rate>
             <lidar>
                 <scan>
                     <horizontal>
-                        <samples>360</samples>
-                        <min_angle>-3.14</min_angle>
-                        <max_angle>3.14</max_angle>
+                        <samples>682</samples>
+                        <min_angle>-2.094</min_angle>
+                        <max_angle>2.094</max_angle>
                     </horizontal>
                 </scan>
                 <range>
-                    <min>0.3</min>
-                    <max>12</max>
+                    <min>0.06</min>
+                    <max>4.0</max>
                 </range>
             </lidar>
 
             <topic>scan</topic>
-            
             <gz_frame_id>lidar</gz_frame_id>
         </sensor>
     </gazebo>

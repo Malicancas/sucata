@@ -78,8 +78,7 @@ arguments=['-topic', 'robot_description', '-name', 'sucata', '-x', '-1', '-y', '
             executable='amcl',
             name='amcl',
             output='screen',
-            parameters=[{'use_sim_time': 'false'}, 'src/config/amcl.yaml'],
-            remappings=[('/scan', '/laser_scan')]  # Remap o tópico do laser se necessário
+            parameters=['src/config/amcl.yaml'],
     )
 
     slam_tool = IncludeLaunchDescription(
@@ -114,7 +113,8 @@ arguments=['-topic', 'robot_description', '-name', 'sucata', '-x', '-1', '-y', '
         diff_drive_spawner,
         joint_broad_spawner,
         ros_gz_bridge,
-        #rviz_node,
-        #slam_tool,
+        amcl,
+        rviz_node,
+        slam_tool,
         ekf_node
     ])
