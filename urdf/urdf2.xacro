@@ -5,10 +5,10 @@
 <robot
   name="sucata">
   <link name="base_footprint"/>
-    <joint name="base_footprint_joint" type="fixed">
-        <parent link="base_link"/>
-        <child link="base_footprint" />
-        <origin xyz="0.0014564 0.00032017 -0.029" rpy="0 0 0" />
+    <joint name="base_joint" type="fixed">
+        <parent link="base_footprint"/>
+        <child link="base_link" />
+        <origin xyz="0.0014564 0.00032017 0.05608" rpy="0 0 0" />
     </joint>
 
   <link

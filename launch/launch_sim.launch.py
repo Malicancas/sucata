@@ -6,9 +6,13 @@ from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch_ros.actions import Node
 from launch.substitutions import LaunchConfiguration
 
+
+
 def generate_launch_description():
 
     package_name='sucata'
+
+    gazebo_params_file = os.path.join(package_name, "config/gazebo_params.yaml")
 
     rsp = IncludeLaunchDescription(
                 PythonLaunchDescriptionSource([os.path.join(
@@ -35,7 +39,7 @@ def generate_launch_description():
     gazebo = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([os.path.join(
             get_package_share_directory('ros_gz_sim'), 'launch', 'gz_sim.launch.py')]),
-        launch_arguments={'gz_args': ['-r -v4 ', world], 'on_exit_shutdown': 'true'}.items()
+        launch_arguments={'gz_args': ['-r -v4 ', world], 'on_exit_shutdown': 'true', "extra_gazebo_args": "--ros-args --params-file " + gazebo_params_file}.items()
     )
 
     spawn_entity = Node(
@@ -61,7 +65,7 @@ arguments=['-topic', 'robot_description', '-name', 'sucata', '-x', '-1', '-y', '
         arguments=['--ros-args', '-p', f'config_file:={bridge_params}']
     )
 
-    rviz_config = os.path.join(get_package_share_directory(package_name), 'config', 'andar_bot.rviz')
+    rviz_config = os.path.join(get_package_share_directory(package_name), 'config', 'map.rviz')
     rviz_node = Node(
         package='rviz2',
         executable='rviz2',
@@ -90,17 +94,16 @@ arguments=['-topic', 'robot_description', '-name', 'sucata', '-x', '-1', '-y', '
     ]),
     launch_arguments={
         'use_sim_time': 'true',
-        'params_file': os.path.join(
+        'slam_params_file': os.path.join(  
             get_package_share_directory(package_name),
             'config/mapper_params_online_async.yaml'
         )
     }.items()
-    )
+)
     ekf_node = Node(
-        package='robot_localization',
-        executable='ekf_node',
-        name='ekf_filter_node',
-        output='screen',
+        package="robot_localization",
+        executable="ekf_node",
+        remappings=[("/odometry/filtered", "/odom")],
         parameters=[os.path.join(get_package_share_directory('sucata'), 'config', 'ekf.yaml')]
     )
 

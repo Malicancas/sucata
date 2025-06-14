@@ -3,7 +3,7 @@ acml:
     use_map_topic: true
     map_topic: /map
     odom_topic: /odom
-    base_frame_id: base_link
+    base_frame_id: base_footprint
     global_frame_id: map
     laser_frame_id: lidar
     min_particles: 500
