@@ -1,17 +1,22 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" >
 
-    <joint name="imu_joint" type="fixed">
-    <origin
-      xyz="0.063662 0.0019005 0.0585"
-      rpy="0 0 0" />
-    <parent
-      link="base_link" />
-    <child
-      link="imu" />
-  </joint>
-
-    <link name="imu">
+    <link
+    name="imu">
+    <inertial>
+      <origin
+        xyz="1.58927283510988E-05 9.32559180236298E-05 0.000878239070510656"
+        rpy="0 0 0" />
+      <mass
+        value="0.000641531141315228" />
+      <inertia
+        ixx="3.17041200198106E-08"
+        ixy="1.24863172344468E-11"
+        ixz="-4.01457310722804E-14"
+        iyy="1.18309245142538E-08"
+        iyz="-1.71325876343045E-15"
+        izz="4.3260264266368E-08" />
+    </inertial>
     <visual>
       <origin
         xyz="0 0 0"
@@ -23,7 +28,7 @@
       <material
         name="">
         <color
-          rgba="0.17647 0.2902 0.8 1" />
+          rgba="0.176470588235294 0.290196078431373 0.8 1" />
       </material>
     </visual>
     <collision>
@@ -35,14 +40,20 @@
           filename="package://sucata/meshes/imu_link.STL" />
       </geometry>
     </collision>
-
-    <inertial>
-            <mass value="0.1"/>
-            <origin xyz="0 0 0" rpy="0 0 0"/>
-            <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
-    </inertial>
-
   </link>
+  <joint
+    name="imu_joint"
+    type="fixed">
+    <origin
+      xyz="-0.034597 0 0.09"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="imu" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
   
 
 

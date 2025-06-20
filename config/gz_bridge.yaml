@@ -10,6 +10,11 @@
   gz_type_name: "gz.msgs.LaserScan"
   direction: GZ_TO_ROS
 
+- ros_topic_name: "/ultrassom"
+  gz_topic_name: "/range_sensor"
+  ros_type_name: "sensor_msgs/msg/Range"
+  gz_type_name: "gz.msgs.LaserScan"
+  direction: GZ_TO_ROS
 
 - ros_topic_name: "camera/image_raw"
   gz_topic_name: "camera/image_raw"

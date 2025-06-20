@@ -106,7 +106,30 @@ arguments=['-topic', 'robot_description', '-name', 'sucata', '-x', '-1', '-y', '
         remappings=[("/odometry/filtered", "/odom")],
         parameters=[os.path.join(get_package_share_directory('sucata'), 'config', 'ekf.yaml')]
     )
+    navigation_launch = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource([
+            os.path.join(
+                get_package_share_directory('nav2_bringup'),
+                'launch/navigation_launch.py'
+            )
+        ]),
+        launch_arguments={
+            'use_sim_time': 'true',
+            #'controller_frequency': '500.0',
+            'params_file': os.path.join(
+                get_package_share_directory('sucata'),
+                'config/navigation.yaml'
+            )
+        }.items()
+    )
+    twist_mux_params = os.path.join(get_package_share_directory(package_name),'config','twist_mux.yaml')
+    twist_mux = Node(
+            package="twist_mux",
+            executable="twist_mux",
+            parameters=[twist_mux_params, {'use_sim_time': True}],
+            remappings=[('/cmd_vel_out','/diff_cont/cmd_vel')],
 
+        )
     return LaunchDescription([
         rsp,
         joystick,
@@ -119,5 +142,7 @@ arguments=['-topic', 'robot_description', '-name', 'sucata', '-x', '-1', '-y', '
         amcl,
         rviz_node,
         slam_tool,
-        ekf_node
+        ekf_node,
+        navigation_launch,
+        twist_mux,
     ])
