@@ -82,7 +82,9 @@ arguments=['-topic', 'robot_description', '-name', 'sucata', '-x', '-1', '-y', '
             executable='amcl',
             name='amcl',
             output='screen',
-            parameters=['src/config/amcl.yaml'],
+            parameters=['sucata/config/amcl.yaml'],
+            remappings = [('/tf', 'tf'),
+                  ('/tf_static', 'tf_static')]
     )
 
     slam_tool = IncludeLaunchDescription(
