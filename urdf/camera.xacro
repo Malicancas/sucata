@@ -7,17 +7,17 @@
     name="camera_link">
     <inertial>
       <origin
-        xyz="0.00165361128202401 -0.00269639697644685 0.0205430007114401"
+        xyz="-0.0063041 0.00019066 -1.4707E-05"
         rpy="0 0 0" />
       <mass
-        value="0.148684888659451" />
+        value="0.0016618" />
       <inertia
-        ixx="0.000383418101917362"
-        ixy="4.9551593389992E-07"
-        ixz="-1.97562143140798E-08"
-        iyy="2.24167306709295E-05"
-        iyz="4.99136040563028E-09"
-        izz="0.000390815698366695" />
+        ixx="6.8075E-08"
+        ixy="4.9904E-11"
+        ixz="3.1064E-13"
+        iyy="4.0624E-08"
+        iyz="-1.8731E-10"
+        izz="2.9619E-08" />
     </inertial>
     <visual>
       <origin
@@ -30,7 +30,7 @@
       <material
         name="">
         <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+          rgba="0.96471 0.96471 0.95294 1" />
       </material>
     </visual>
     <collision>
@@ -47,7 +47,7 @@
     name="camera_joint"
     type="fixed">
     <origin
-      xyz="0.11915 0.0023485 0.060264"
+      xyz="0.078124 -0.00096168 0.11303"
       rpy="0 0 0" />
     <parent
       link="base_link" />
@@ -57,18 +57,17 @@
       xyz="0 0 0" />
   </joint>
   
-  <!-- Sensor para ROS 2 + Gazebo -->
     <gazebo reference="camera_link">
         <material>Gazebo/Red</material>
 
-        <sensor name="camera" type="depth">
+        <sensor name="cameraV3" type="camera">
             <pose> 0 0 0 0 0 0 </pose>
             <visualize>true</visualize>
-            <update_rate>30</update_rate>
+            <update_rate>10</update_rate>
             <camera>
                 <horizontal_fov>1.089</horizontal_fov>
                 <image>
-                    <format>B8G8R8</format>
+                    <format>R8G8B8</format> <!-- Changed from B8G8R8 -->
                     <width>640</width>
                     <height>480</height>
                 </image>
@@ -77,7 +76,8 @@
                     <far>8.0</far>
                 </clip>
             </camera>
-            <topic>/world/mundoArUco/model/sucata/link/base_footprint/sensor/camera/depth_image</topic>
+            <topic>/camera/rpi/image_raw</topic>
+            <!-- <topic>/world/mundoArUco/model/sucata/link/base_footprint/sensor/camera/depth_image</topic> -->
             <gz_frame_id>camera_link</gz_frame_id>
         </sensor>
     </gazebo>

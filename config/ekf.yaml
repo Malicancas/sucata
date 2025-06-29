@@ -22,10 +22,10 @@ ekf_filter_node:
         #         x_accel , y_accel  , z_accel]
 
         odom0_config: [false, false, false,
-               false, false, false,
-               true, true, false,     # velocidades x, y
-               false, false, true,    # velocidade angular z
-               false, false, false]
+                        false, false, false,
+                        true, true, false,     # velocidades x, y
+                        false, false, true,    # velocidade angular z
+                        false, false, false]
 
 
         imu0_config: [false, false, false,

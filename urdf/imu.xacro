@@ -69,7 +69,7 @@
                 name="gz::sim::systems::Imu">
                  
             </plugin>
-            <gz_frame_id>lidar</gz_frame_id>
+            <gz_frame_id>imu</gz_frame_id>
         </sensor>
 
         

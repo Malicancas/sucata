@@ -65,7 +65,7 @@ arguments=['-topic', 'robot_description', '-name', 'sucata', '-x', '-1', '-y', '
         arguments=['--ros-args', '-p', f'config_file:={bridge_params}']
     )
 
-    rviz_config = os.path.join(get_package_share_directory(package_name), 'config', 'map.rviz')
+    rviz_config = os.path.join(get_package_share_directory(package_name), 'rviz', 'map.rviz')
     rviz_node = Node(
         package='rviz2',
         executable='rviz2',
