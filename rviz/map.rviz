@@ -6,11 +6,7 @@ Panels:
       Expanded:
         - /Global Options1
         - /Camera1/Visibility1
-        - /Map1
-        - /PointCloud21
-        - /Map2
-        - /Map3
-        - /Path1
+        - /Polygon1
       Splitter Ratio: 0.5
     Tree Height: 428
   - Class: rviz_common/Selection
@@ -240,6 +236,7 @@ Visualization Manager:
         Map: true
         Path: true
         PointCloud2: true
+        Polygon: true
         RobotModel: false
         TF: false
         Value: true
@@ -374,6 +371,19 @@ Visualization Manager:
         Reliability Policy: Reliable
         Value: /received_global_plan
       Value: true
+    - Alpha: 1
+      Class: rviz_default_plugins/Polygon
+      Color: 25; 255; 0
+      Enabled: true
+      Name: Polygon
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        Filter size: 10
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /local_costmap/published_footprint
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -429,11 +439,11 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Scale: 343.30157470703125
+      Scale: 840.2444458007812
       Target Frame: <Fixed Frame>
       Value: TopDownOrtho (rviz_default_plugins)
-      X: 0.85947185754776
-      Y: 0.9781166911125183
+      X: 0.0261214729398489
+      Y: -0.1830209344625473
     Saved: ~
 Window Geometry:
   Camera:
