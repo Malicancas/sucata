@@ -1,4 +1,12 @@
-![CodeRabbit Pull Request Reviews](https://img.shields.io/coderabbit/prs/github/Malicancas/sucata?utm_source=oss&utm_medium=github&utm_campaign=Malicancas%2Fsucata&labelColor=171717&color=FF570A&link=https%3A%2F%2Fcoderabbit.ai&label=CodeRabbit+Reviews)
+
+## Falta
+
+- Docking a funcionar como deve ser
+
+- Ajustes de slam e nav2
+
+- ReadMe como deve ser
+
 
 # Sucata - ROS 2 Jazzy
 
