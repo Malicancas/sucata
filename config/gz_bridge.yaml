@@ -22,7 +22,6 @@
   gz_type_name: "gz.msgs.Image"
   direction: GZ_TO_ROS
 
-# gz topics published by Camera plugin
 - ros_topic_name: "camera/camera_info"
   gz_topic_name: "/camera/rpi/camera_info"
   ros_type_name: "sensor_msgs/msg/CameraInfo"
@@ -42,7 +41,6 @@
   gz_type_name: "gz.msgs.TwistStamped"
   direction: ROS_TO_GZ
 
-# gz topic published by JointState plugin
 - ros_topic_name: "joint_states"
   gz_topic_name: "joint_states"
   ros_type_name: "sensor_msgs/msg/JointState"

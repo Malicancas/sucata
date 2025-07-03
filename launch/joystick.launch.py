@@ -26,6 +26,6 @@ def generate_launch_description():
     )
 
     return LaunchDescription([
-        #joystick_node,
+        joystick_node,
         teleop_node,
     ])
