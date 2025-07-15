@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+    <link
+    name="lidar">
+    <inertial>
+      <origin
+        xyz="-9.18606166123576E-05 -4.20244776477841E-11 0.0287457324561401"
+        rpy="0 0 0" />
+      <mass
+        value="0.136132248882766" />
+      <inertia
+        ixx="6.89403444506094E-05"
+        ixy="-1.08297193917411E-13"
+        ixz="2.9341823822417E-07"
+        iyy="6.92016796483044E-05"
+        iyz="1.54668485205633E-13"
+        izz="4.93693267811336E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sucata/meshes/lidar_link.STL" />
+      </geometry>
+      <material name="preto">
+        <color rgba="0.1 0.1 0.1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://sucata/meshes/lidar_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lidar_joint"
+    type="fixed">
+    <origin
+      xyz="0.042054 0.00016264 0.09"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="lidar" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      effort="10"
+      velocity="10" />
+  </joint>
+
+
+
+    <gazebo reference="lidar">
+        <material>Gazebo/Black</material>
+
+        <sensor name="laser" type="gpu_lidar">
+            <pose> 0 0 0.06 0 0 0 </pose>
+            <visualize>true</visualize>
+            <update_rate>30</update_rate>
+            <lidar>
+                <scan>
+                    <horizontal>
+                        <samples>682</samples>
+                        <min_angle>-2.094</min_angle>
+                        <max_angle>2.094</max_angle>
+                    </horizontal>
+                </scan>
+                <range>
+                    <min>0.06</min>
+                    <max>4.0</max>
+                </range>
+            </lidar>
+
+            <topic>scan</topic>
+            <gz_frame_id>lidar</gz_frame_id>
+        </sensor>
+    </gazebo>
+
+</robot>
