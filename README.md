@@ -14,7 +14,7 @@ Projeto open source de robótica móvel com ROS 2 para simulação, controle e i
 
 ## Descrição
 
-O **Sucata** é um robô de 4 rodas desenvolvido com o framework **ROS 2 (Jazzy)**, pensado para simulação no **Gazebo Harmonic** e controle via `ros2_control`. O projeto visa facilitar testes, integração de sensores (como LIDAR e camera para leitura de ArUco markers) e diferentes métodos de operação.
+O **Sucata** é um robô de 4 rodas desenvolvido com o framework **ROS 2 (Jazzy)**, pensado para simulação no **Gazebo Harmonic** e controle via `ros2_control`. O projeto visa facilitar testes, integração de sensores (como LIDAR, camera para leitura de ArUco markers, camera de profundidade e IMU) e diferentes métodos de operação.
 
 ## Demonstração
 
