@@ -59,6 +59,7 @@ cd ..
 colcon build
 source install/setup.bash
 ros2 launch sucata launch_sim.launch.py
+export GZ_SIM_RESOURCE_PATH=$GZ_SIM_RESOURCE_PATH:$HOME/ros2_ws/src/sucata/models  #altera o caminho para as boxs
 ```
 
 ### Para uso do controle BLE (Nunchuck):
