@@ -1,14 +1,14 @@
 
-## Falta
+## Autores
 
-- Docking a funcionar como deve ser
+- [@José Craveiro](https://github.com/Malicancas)
 
-- Ajustes de slam e nav2
+- [@Guilherme Filipe](https://github.com/guilassas)
 
-- ReadMe como deve ser
 
 
 # Sucata - ROS 2 Jazzy
+
 
 Projeto open source de robótica móvel com ROS 2 para simulação, controle e integração de sensores num robô de 4 rodas.
 
@@ -24,20 +24,33 @@ O **Sucata** é um robô de 4 rodas desenvolvido com o framework **ROS 2 (Jazzy)
   <img src="assets/nunchuck.jpeg" width="250" alt="Controle Nunchuck BLE"/>
 </p>
 
-## Estado do Projeto
+## Funcionalidades do Projeto
 
-- Robô configurado e simulado no Gazebo ✅
-- Controle funcional via `teleop_keyboard` ✅
-- Controle funcional via `teleop_joy` ✅
+- Mapeamento SLAM com LiDAR 2D e sensores de profundidade ✅
+
+- Navegação autônoma usando Navigation2 ✅
+
+- Docking automático com reconhecimento de marcadores ArUco ✅
+
+- Controle manual via joystick personalizado ✅
+
+- Fusão sensorial (IMU + odometria) com EKF ✅
 
 ## Tecnologias Utilizadas
 
 - **ROS 2 Jazzy** (Ubuntu 24.04)
 - **Gazebo Harmonic**
 - `ros2_control`
+- `ros2_controllers`
 - `robot_state_publisher`
 - `joint_state_controller`
+- `nav2_bringup`
+- `nav2_amcl`
+- `slam_toolbox`
+- `twist mux`
+- `robot_localization` 
 - **LIDAR** (`urg_node2`)
+- **Depht Camera** (`openni2_camera`)
 - **ArUco Markers** (`ros2_aruco`)
 
 ## Instalação
@@ -55,11 +68,11 @@ git clone https://github.com/Hokuyo-aut/urg_node2.git
 ### Build e execução:
 
 ```bash
+export GZ_SIM_RESOURCE_PATH=$GZ_SIM_RESOURCE_PATH:$HOME/ros2_ws/src/sucata/modelos #altera o caminho dos modelos do Gazebo para as boxs
 cd ..
 colcon build
 source install/setup.bash
 ros2 launch sucata launch_sim.launch.py
-export GZ_SIM_RESOURCE_PATH=$GZ_SIM_RESOURCE_PATH:$HOME/ros2_ws/src/sucata/models  #altera o caminho para as boxs
 ```
 
 ### Para uso do controle BLE (Nunchuck):
