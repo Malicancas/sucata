@@ -7,7 +7,7 @@
 
 
 
-# S.U.C.A.T.A - Sistema Unificado de Cartografia Autónoma e Tracking de ArUcos
+# 🤖 S.U.C.A.T.A - Sistema Unificado de Cartografia Autónoma e Tracking de ArUcos
 
 O **SUCATA** é um robô de 4 rodas desenvolvido com o framework **ROS 2 Jazzy**, pensado para simulação no **Gazebo Harmonic** e controle via `ros2_control`. O projeto visa facilitar testes, integração de sensores (como LIDAR e camera para leitura de ArUco markers) e diferentes métodos de operação.
 
@@ -18,7 +18,7 @@ O **SUCATA** é um robô de 4 rodas desenvolvido com o framework **ROS 2 Jazzy**
   <img src="assets/globalCostmap.gif" width="250" alt="Slam"/>
 </p>
 
-## Estado do Projeto
+## 📃 Estado do Projeto
 
 - Robô configurado e simulado no Gazebo ✅
     - Controle funcional via `teleop_keyboard` ✅
