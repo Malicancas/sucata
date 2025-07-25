@@ -7,6 +7,7 @@ Panels:
         - /Global Options1
         - /Camera1/Visibility1
         - /Polygon1
+        - /Path2
       Splitter Ratio: 0.5
     Tree Height: 428
   - Class: rviz_common/Selection
@@ -231,6 +232,7 @@ Visualization Manager:
         Value: /camera/image_raw
       Value: false
       Visibility:
+        "": true
         Grid: true
         LaserScan: true
         Map: true
@@ -384,6 +386,34 @@ Visualization Manager:
         Reliability Policy: Reliable
         Value: /local_costmap/published_footprint
       Value: true
+    - Alpha: 1
+      Buffer Length: 1
+      Class: rviz_default_plugins/Path
+      Color: 25; 255; 0
+      Enabled: true
+      Head Diameter: 0.30000001192092896
+      Head Length: 0.20000000298023224
+      Length: 0.30000001192092896
+      Line Style: Billboards
+      Line Width: 0.20000000298023224
+      Name: Path
+      Offset:
+        X: 0
+        Y: 0
+        Z: 0
+      Pose Color: 255; 85; 255
+      Pose Style: None
+      Radius: 0.029999999329447746
+      Shaft Diameter: 0.10000000149011612
+      Shaft Length: 0.10000000149011612
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        Filter size: 10
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /plan
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -439,11 +469,11 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Scale: 840.2444458007812
+      Scale: 190.70677185058594
       Target Frame: <Fixed Frame>
       Value: TopDownOrtho (rviz_default_plugins)
-      X: 0.0261214729398489
-      Y: -0.1830209344625473
+      X: 0.7981340289115906
+      Y: -0.07048079371452332
     Saved: ~
 Window Geometry:
   Camera:

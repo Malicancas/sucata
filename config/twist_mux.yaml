@@ -1,21 +1,20 @@
 twist_mux:
   ros__parameters:
-    use_stamped: true  # Adicione esta linha (true se usar mensagens stamped)
-    
+    use_stamped: true
+
     topics:
-      name: navigation
-      topic: cmd_vel_nav
-      timeout: 0.5
-      priority: 100
-      
-      joystick:
-        topic   : joy_vel
-        timeout : 0.5
+      nav2: 
+        topic: cmd_vel_nav 
+        timeout: 0.5
         priority: 100
 
-        
+      joystick:
+        topic   : joy_vel 
+        timeout : 0.5
+        priority: 200
+
     locks:
       name: e_stop
       topic: e_stop
       timeout: 0.0
-      priority: 255  # Máxima prioridade
+      priority: 255

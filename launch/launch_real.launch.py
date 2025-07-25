@@ -117,7 +117,7 @@ arguments=['-topic', 'robot_description', '-name', 'sucata', '-x', '-1', '-y', '
         ]),
         launch_arguments={
             'use_sim_time': 'true',
-            'enable_stamped_cmd_vel': 'true',
+            #'controller_frequency': '500.0',
             'params_file': os.path.join(
                 get_package_share_directory('sucata'),
                 'config/navigation.yaml'
@@ -129,22 +129,10 @@ arguments=['-topic', 'robot_description', '-name', 'sucata', '-x', '-1', '-y', '
             package="twist_mux",
             executable="twist_mux",
             parameters=[twist_mux_params, {'use_sim_time': True}],
-            remappings=[('/cmd_vel_out','/diff_cont/cmd_vel')],
+            remappings=[('/cmd_vel_out','/diffbot_base_controller/cmd_vel')],
 
         )
     return LaunchDescription([
-        rsp,
         joystick,
-        world_arg,
-        gazebo,
-        spawn_entity,
-        diff_drive_spawner,
-        joint_broad_spawner,
-        ros_gz_bridge,
-        #amcl,
-        rviz_node,
-        slam_tool,
-        ekf_node,
-        navigation_launch,
         twist_mux,
     ])
