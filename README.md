@@ -25,7 +25,7 @@ O **SUCATA** é um robô de 4 rodas desenvolvido com o framework **ROS 2 Jazzy**
     - Controle funcional via `Nunchuck` ✅
     - Navegação ✅
     - Slam ✅
-    - Camara de perfundidade - Sem integração na Navegação para já
+    - Camara de profundidade - Sem integração na Navegação para já
     - Deteção de ArUco - Algoritmo de docking tem de ser trabalhado
 
 
