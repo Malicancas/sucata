@@ -69,6 +69,13 @@ cd ros2ws/src
 
 #Clone do repositório principal
 git clone https://github.com/Malicancas/sucata
+
+#Instalar dependencias
+rosdep install --from-paths src --ignore-src -r -y
+
+#Seguir os passos para instalar o gazebo Harmonic
+https://gazebosim.org/docs/harmonic/install_ubuntu/
+
 ```
 **Build e simulação:**
 ```bash
