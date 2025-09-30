@@ -82,6 +82,7 @@ https://gazebosim.org/docs/harmonic/install_ubuntu/
 #Dentro da pasta /ros2ws
 colcon build --symlink-install
 source install/setup.bash
+export GZ_SIM_RESOURCE_PATH=~/my-local-models/
 ros2 launch sucata launch_sim.launch.py
 ```
 
