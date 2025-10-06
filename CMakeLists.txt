@@ -42,4 +42,10 @@ install(
   DESTINATION share/${PROJECT_NAME}
 )
 
+# Install Python scripts
+install(
+  PROGRAMS scripts/yolo_camera_node.py
+  DESTINATION lib/${PROJECT_NAME}
+)
+
 ament_package()
