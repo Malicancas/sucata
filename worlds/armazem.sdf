@@ -411,11 +411,11 @@
         <trajectory id="0" type="walk" tension="0.6">
           <waypoint>
             <time>0</time>
-            <pose>5 5 1.0 0 0 -1.75</pose>
+            <pose>5 5 1.0 0 0 -1.57</pose>
           </waypoint>
           <waypoint>
             <time>8</time>
-            <pose>5 -5 1.0 0 0 -1.75</pose>
+            <pose>5 -5 1.0 0 0 -1.57</pose>
           </waypoint>
           <waypoint>
             <time>9</time>
@@ -423,11 +423,11 @@
           </waypoint>
           <waypoint>
             <time>10</time>
-            <pose>5 -5 1.0 0 0 1.75</pose>
+            <pose>5 -5 1.0 0 0 1.57</pose>
           </waypoint>
           <waypoint>
             <time>18</time>
-            <pose>5 5 1.0 0 0 1.75</pose>
+            <pose>5 5 1.0 0 0 1.57</pose>
           </waypoint>
           <waypoint>
             <time>19</time>
@@ -435,7 +435,7 @@
           </waypoint> 
           <waypoint>
             <time>20</time>
-            <pose>5 5 1.0 0 0 -1.75</pose>
+            <pose>5 5 1.0 0 0 -1.57</pose>
           </waypoint>
         </trajectory>
       </script>
