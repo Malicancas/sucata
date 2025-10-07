@@ -23,6 +23,14 @@ def generate_launch_description():
         ]),
         launch_arguments={'use_sim_time': 'true', 'use_ros2_control': 'true'}.items()
     )
+
+    camera = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource([
+            os.path.join(
+                get_package_share_directory(package_name), 'launch', 'camera.launch.py'
+            )
+        ]),
+    )
     
     joystick = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([
@@ -166,6 +174,7 @@ def generate_launch_description():
 
     return LaunchDescription([
         rsp,
+        camera,
         joystick,
         world_arg,
         gazebo,
@@ -173,7 +182,6 @@ def generate_launch_description():
         diff_drive_spawner,
         joint_broad_spawner,
         ros_gz_bridge,
-        # amcl,  # podes descomentar se quiseres usar AMCL
         rviz_node,
         slam_tool,
         ekf_node,

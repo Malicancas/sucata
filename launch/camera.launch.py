@@ -55,8 +55,7 @@ def generate_launch_description():
             default_value='false',
             description='Use simulation (Gazebo) clock if true'
         ),
-        
-        # RealSense apenas quando NÃO for simulação
+
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource([
                 get_package_share_directory('realsense2_camera'),
