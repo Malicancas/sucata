@@ -33,7 +33,7 @@ def generate_launch_description():
     )
 
     default_world = os.path.join(
-        get_package_share_directory(package_name), 'worlds', 'mundoArUco.sdf'
+        get_package_share_directory(package_name), 'worlds', 'armazem.sdf'
     )
     world = LaunchConfiguration('world')
 
@@ -59,7 +59,7 @@ def generate_launch_description():
     spawn_entity = Node(
         package='ros_gz_sim',
         executable='create',
-        arguments=['-topic', 'robot_description', '-name', 'sucata', '-x', '-1', '-y', '-1', '-z', '0.1'],
+        arguments=['-topic', 'robot_description', '-name', 'sucata', '-x', '0', '-y', '0', '-z', '0.1'],
         output='screen'
     )
 
