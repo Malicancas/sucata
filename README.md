@@ -27,6 +27,7 @@
     - SLAM ✅
     - Depth camera - No integration in Navigation for now
     - ArUco detection - Docking algorithm needs to be worked on
+    - YOLO11n - Algorithm needs work
 
 
 
