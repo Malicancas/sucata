@@ -419,14 +419,22 @@
           </waypoint>
           <waypoint>
             <time>9</time>
+            <pose>5 -5 1.0 0 0 0</pose>
+          </waypoint>
+          <waypoint>
+            <time>10</time>
             <pose>5 -5 1.0 0 0 1.75</pose>
           </waypoint>
           <waypoint>
-            <time>17</time>
+            <time>18</time>
             <pose>5 5 1.0 0 0 1.75</pose>
           </waypoint>
           <waypoint>
-            <time>18</time>
+            <time>19</time>
+            <pose>5 5 1.0 0 0 0</pose>
+          </waypoint> 
+          <waypoint>
+            <time>20</time>
             <pose>5 5 1.0 0 0 -1.75</pose>
           </waypoint>
         </trajectory>
