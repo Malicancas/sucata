@@ -172,10 +172,27 @@ def generate_launch_description():
         remappings=[('/cmd_vel_out', '/diff_cont/cmd_vel')],
     )
 
+    web_video = Node(
+        package='web_video_server',
+        executable='web_video_server',
+        name='web_video_server',
+        output='screen',
+        parameters=[{'port': 8080}],
+    )
+
+    rosbridge = Node(
+        package='rosbridge_server',
+        executable='rosbridge_websocket',
+        name='rosbridge',
+        output='screen',
+    )
+
     return LaunchDescription([
         rsp,
         camera,
         joystick,
+        web_video,
+        rosbridge,
         world_arg,
         gazebo,
         spawn_entity,

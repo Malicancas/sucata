@@ -10,11 +10,18 @@ twist_mux:
 
       joystick:
         topic   : joy_vel 
-        timeout : 0.5
+        timeout : 0.0
+        priority: 255
+
+      teleop:
+        topic: cmd_vel_teleop
+        timeout: 0.5
         priority: 200
 
-    locks:
-      name: e_stop
-      topic: e_stop
-      timeout: 0.0
-      priority: 255
+      locks:
+        name: e_stop
+        topic: e_stop
+        timeout: 0.0
+        priority: 255
+
+      

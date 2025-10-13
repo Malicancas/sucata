@@ -48,7 +48,11 @@ class YoloCameraNode(Node):
             '/ultralytics/segmentation/image', 
             10
         )
-        self.cmd_vel_pub = self.create_publisher(TwistStamped, 'diff_cont/cmd_vel', 10)  
+        self.cmd_vel_pub = self.create_publisher(
+            TwistStamped,
+            'diff_cont/cmd_vel',
+            10
+        )  
         
         # Subscriber
         self.subscription = self.create_subscription(
@@ -91,31 +95,7 @@ class YoloCameraNode(Node):
                 seg_image_msg.header = msg.header  # Preserve timestamp
                 self.seg_image_pub.publish(seg_image_msg)
                 
-            if self.detection_model is not None:
-                det_result = self.detection_model(cv_image)
-                boxes = det_result[0].boxes
-                for box in boxes:
-                    if int(box.cls[0]) == 0:  
-                        x1, y1, x2, y2 = map(int, box.xyxy[0])
-                        cx = (x1 + x2) // 2
-                        cy = (y1 + y2) // 2
-
-                        img_cx = cv_image.shape[1] // 2
-                        twist = TwistStamped()
-                        if cx < img_cx - 50:
-                            twist.twist.angular.z = 0.6  
-                        elif cx > img_cx + 50:
-                            twist.twist.angular.z = -0.6  
-                        else:
-                            twist.twist.linear.x = 0.7  
-                        self.cmd_vel_pub.publish(twist)
-                        break
-
-            if self.detection_model is None:
-                twist = TwistStamped()
-                twist.twist.angular.z = 0.8
-
-                
+            
         except Exception as e:
             self.get_logger().error(f"Error processing image: {e}")
 
