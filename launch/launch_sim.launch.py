@@ -67,7 +67,7 @@ def generate_launch_description():
     spawn_entity = Node(
         package='ros_gz_sim',
         executable='create',
-        arguments=['-topic', 'robot_description', '-name', 'sucata', '-x', '0', '-y', '0', '-z', '0.1'],
+        arguments=['-topic', 'robot_description', '-name', 'sucata', '-x', '-0.35', '-y', '4.26', '-z', '0.1', '-R', '0', '-P', '0', '-Y', '1.57'],
         output='screen'
     )
 
@@ -180,19 +180,12 @@ def generate_launch_description():
         parameters=[{'port': 8080}],
     )
 
-    rosbridge = Node(
-        package='rosbridge_server',
-        executable='rosbridge_websocket',
-        name='rosbridge',
-        output='screen',
-    )
 
     return LaunchDescription([
         rsp,
         camera,
         joystick,
         web_video,
-        rosbridge,
         world_arg,
         gazebo,
         spawn_entity,

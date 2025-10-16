@@ -6,11 +6,11 @@ twist_mux:
       nav2: 
         topic: cmd_vel_nav 
         timeout: 0.5
-        priority: 100
+        priority: 200
 
       joystick:
         topic   : joy_vel 
-        timeout : 0.0
+        timeout : 0.2
         priority: 255
 
       teleop:
