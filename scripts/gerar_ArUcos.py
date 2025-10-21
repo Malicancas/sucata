@@ -23,19 +23,17 @@ def generate_dock_aruco():
     bordered_image[border_size:border_size+marker_size, 
                    border_size:border_size+marker_size] = marker_image
     
-    # Caminho de saída
-    output_dir = "../models/charging_dock/materials/textures"
+    output_dir = "../materials/textures"
     os.makedirs(output_dir, exist_ok=True)
-    output_path = f"{output_dir}/aruco_dock_marker.png"
+    output_path = f"{output_dir}/aruco_dock_marker_{marker_id}.png"
     
     # Salvar
     cv2.imwrite(output_path, bordered_image)
     
-    print(f"✅ ArUco marker {marker_id} para charging dock criado!")
+    print(f"✅ ArUco marker {marker_id} criado!")
     print(f"   📁 Salvo em: {output_path}")
     print(f"   📐 Tamanho: {marker_size}x{marker_size} pixels")
     print(f"   🎯 Use ID {marker_id} para detectar a charging dock")
-    print(f"   📋 Comando de teste: ros2 run sucata dock_detector.py")
 
 if __name__ == "__main__":
     generate_dock_aruco()

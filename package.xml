@@ -21,7 +21,9 @@
   <depend>ros2_control</depend>
   <depend>ros2_controllers</depend>
   <depend>twist_mux</depend>
-
+  <depend>geometry_msgs</depend>
+  <depend>tf2_ros</depend>
+  <depend>tf2_geometry_msgs</depend>
 
 
   <!-- Dependencies for testing -->

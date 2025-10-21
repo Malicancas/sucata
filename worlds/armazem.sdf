@@ -454,8 +454,8 @@
             </mesh>
           </geometry>
           <material>
-            <ambient>0.792 0.819 0.933 1</ambient>
-            <diffuse>0.792 0.819 0.933 1</diffuse>
+            <ambient>0.2 0.8 0.2 1</ambient>
+            <diffuse>0.2 0.8 0.2 1</diffuse>
             <specular>0.2 0.2 0.2 1</specular>
           </material>
         </visual>
@@ -479,8 +479,8 @@
             </mesh>
           </geometry>
           <material>
-            <ambient>0.792 0.819 0.933 1</ambient>
-            <diffuse>0.792 0.819 0.933 1</diffuse>
+            <ambient>0.2 0.8 0.2 1</ambient>
+            <diffuse>0.2 0.8 0.2 1</diffuse>
             <specular>0.3 0.3 0.3 1</specular>
           </material>
         </visual>
@@ -493,10 +493,37 @@
           </geometry>
         </collision>
       </link>
+      
+      <link name="aruco_marker">
+        <pose>-0.01 0 0.02 1.57 0 0</pose>
+        
+        <visual name="aruco_visual">
+          <geometry>
+            <box>
+              <size>0.05 0.05 0.002</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0 0 0 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>package://sucata/materials/textures/aruco_dock_marker.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+      </link>
 
       <joint name="joint_pads" type="fixed">
         <parent>dock</parent>
         <child>pads</child>
+      </joint>
+
+      <joint name="joint_aruco" type="fixed">
+        <parent>dock</parent>
+        <child>aruco_marker</child>
       </joint>
     </model>
 

@@ -7,13 +7,13 @@
 
 
 
-# 🤖 S.U.C.A.T.A 2.0 - Unified System for Autonomous Cartography and ArUco Tracking
+# S.U.C.A.T.A 2.0 - Unified System for Autonomous Cartography and ArUco Tracking
 
 **SUCATA** is a 4-wheeled robot developed with the **ROS 2 Jazzy** framework, designed for simulation in **Gazebo Harmonic** and control via `ros2_control`. The project aims to facilitate testing, sensor integration (such as LIDAR and camera for reading ArUco markers) and different operation methods.
 
 ## Demonstration
 
-<p float="left">
+<p float="center">
   <img src="assets/chassiNovo.jpg" width="250" alt="Sucata"/>
   <img src="assets/globalCostmap.gif" width="250" alt="Slam"/>
 </p>

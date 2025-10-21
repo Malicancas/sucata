@@ -45,6 +45,7 @@ install(
 # Install Python scripts
 install(
   PROGRAMS scripts/yolo_camera_node.py
+           scripts/aruco_detection_node.py
   DESTINATION lib/${PROJECT_NAME}
 )
 

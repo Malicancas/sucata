@@ -18,10 +18,6 @@ twist_mux:
         timeout: 0.5
         priority: 200
 
-      locks:
-        name: e_stop
-        topic: e_stop
-        timeout: 0.0
-        priority: 255
+     
 
       

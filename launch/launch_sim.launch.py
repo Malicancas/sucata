@@ -162,6 +162,14 @@ def generate_launch_description():
         }.items()
     )
 
+    aruco_detection_node = Node(
+        package='sucata',
+        executable='aruco_detection_node.py',
+        name='aruco_detection_node',
+        output='screen',
+        parameters=[{'use_sim_time': True}],
+    )
+
     twist_mux_params = os.path.join(
         get_package_share_directory(package_name), 'config', 'twist_mux.yaml'
     )

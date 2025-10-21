@@ -65,14 +65,14 @@
             <visualize>true</visualize>
             <update_rate>60</update_rate>
             <camera>
-                <horizontal_fov>1.089</horizontal_fov>
+                <horizontal_fov>1.212</horizontal_fov>
                 <image>
                     <format>R8G8B8</format> 
                     <width>640</width>
                     <height>480</height>
                 </image>
                 <clip>
-                    <near>0.05</near>
+                    <near>0.01</near>
                     <far>50.0</far>
                 </clip>
             </camera>
