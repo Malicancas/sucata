@@ -407,7 +407,7 @@ docking_server:
       external_detection_rotation_yaw: 0.0
       filter_coef: 0.1
 
-    dock_database: ['home_dock']
+    docks: ['home_dock']
     home_dock:
       type: 'simple_charging_dock'
       frame: map
