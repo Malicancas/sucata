@@ -1,5 +1,5 @@
 
-## Authors
+## Autores
 
 - [@José Craveiro](https://github.com/Malicancas)
 
@@ -7,112 +7,112 @@
 
 
 
-# S.U.C.A.T.A 2.0 - Unified System for Autonomous Cartography and ArUco Tracking
+# S.U.C.A.T.A 2.0 - Sistema Unificado de Cartografia Autónoma e Tracking de ArUco
 
-**SUCATA** is a 4-wheeled robot developed with the **ROS 2 Jazzy** framework, designed for simulation in **Gazebo Harmonic** and control via `ros2_control`. The project aims to facilitate testing, sensor integration (such as LIDAR and camera for reading ArUco markers) and different operation methods.
+**SUCATA** é um robô de 4 rodas desenvolvido com o framework **ROS 2 Jazzy**, projetado para simulação no **Gazebo Harmonic** e controlo via `ros2_control`. O projeto tem como objetivo facilitar testes, integração de sensores (como LIDAR e câmara para leitura de marcadores ArUco) e diferentes métodos de operação.
 
-## Demonstration
+## Demonstração
 
 <p float="center">
   <img src="assets/chassiNovo.jpg" width="250" alt="Sucata"/>
   <img src="assets/globalCostmap.gif" width="250" alt="Slam"/>
 </p>
 
-## 📃 Project Status
+## 📃 Estado do Projeto
 
-- Robot configured and simulated in Gazebo ✅
-    - Functional control via `teleop_keyboard` ✅
-    - Functional control via `Nunchuck` ✅
-    - Navigation ✅
+- Robô configurado e simulado no Gazebo ✅
+    - Controlo funcional via `teleop_keyboard` ✅
+    - Controlo funcional via `Nunchuck` ✅
+    - Navegação ✅
     - SLAM ✅
-    - Depth camera - No integration in Navigation for now
-    - ArUco detection - Docking algorithm needs to be worked on
-    - YOLO11n - Algorithm needs work
+    - Câmara de profundidade - Sem integração na Navegação por agora
+    - Deteção ArUco - Algoritmo de docking precisa de ser trabalhado
+    - YOLO11n - Algoritmo precisa de trabalho
 
 
 
 
-## 📦 External Packages Used
+## 📦 Pacotes Externos Utilizados
 
 - [**LIDAR**](https://github.com/Hokuyo-aut/urg_node2) (`urg_node2`)
-- [**ArUco Markers**](https://github.com/JMU-ROBOTICS-VIVA/ros2_aruco) (`ros2_aruco`)
+- [**Marcadores ArUco**](https://github.com/JMU-ROBOTICS-VIVA/ros2_aruco) (`ros2_aruco`)
 - [**Asus Xtion Pro**](https://github.com/ros-drivers/openni2_camera) (`openni2_camera`)
 
-## 💥 Components List
-Components used in this project:
+## 💥 Lista de Componentes
+Componentes utilizados neste projeto:
 
-| | Component |
+| | Componente |
 | --| --|
 |1| Raspberry Pi 4B (4 GB)|
-|2| SanDisk 32 GB SD Card (minimum)|
+|2| Cartão SD SanDisk 32 GB (mínimo)|
 |3| [Skeleton Bot 4WD hercules mobile robotic platform](https://wiki.seeedstudio.com/Skeleton_Bot-4WD_hercules_mobile_robotic_platform/)|
 |4| [IMU MPU6050](https://pt.aliexpress.com/item/1005008404467219.html?src=google&pdp_npi=4@dis!EUR!1.92!1.38!!!!!@!12000044896717467!ppc!!!&gQT=2)|
 |5| LiDAR URG-04LX|
-|6| Raspberry Pi camera module 3|
+|6| Módulo de câmara Raspberry Pi 3|
 |7| Asus Xtion Pro|
-|8| 50mm 12V Fan|
-|9| [50mm Fan Stand](https://www.printables.com/model/443438-raspberry-pi-4-bracket-for-50mm-fan)|
-|10| LiPo 4S 2400mAh 14.8V Battery|
-|11| Modified Nunchuck (see Nunchuck repository)|
-|12| USB Dock with external power supply|
-|13| TPLink MR3020 Router (optional)|
+|8| Ventoinha 50mm 12V|
+|9| [Suporte de ventoinha 50mm](https://www.printables.com/model/443438-raspberry-pi-4-bracket-for-50mm-fan)|
+|10| Bateria LiPo 4S 2400mAh 14.8V|
+|11| Nunchuck modificado (ver repositório Nunchuck)|
+|12| Dock USB com alimentação externa|
+|13| Router TPLink MR3020 (opcional)|
 
 
 
-## Installation
-The following commands assume that the user already has a functional ROS2 environment and Gazebo Harmonic, consult the [documentation](https://docs.ros.org/en/jazzy/index.html) for more information.
+## Instalação
+Os comandos seguintes assumem que o utilizador já possui um ambiente ROS2 funcional e Gazebo Harmonic, consulte a [documentação](https://docs.ros.org/en/jazzy/index.html) para mais informações.
 
-**Simulation setup:**
+**Configuração da simulação:**
 ```bash
-# Create workspace
+# Criar workspace
 mkdir -p ros2ws/src
 cd ros2ws/src
 
-# Clone main repository
+# Clonar repositório principal
 git clone https://github.com/Malicancas/sucata
 
-# Install dependencies
+# Instalar dependências
 rosdep install --from-paths src --ignore-src -r -y
 
-# Follow the steps to install Gazebo Harmonic
+# Seguir os passos para instalar o Gazebo Harmonic
 https://gazebosim.org/docs/harmonic/install_ubuntu/
 
 ```
-**Build and simulation:**
+**Compilação e simulação:**
 ```bash
-# Inside the /ros2ws folder
+# Dentro da pasta /ros2ws
 colcon build --symlink-install
 source install/setup.bash
 export GZ_SIM_RESOURCE_PATH=~/my-local-models/
 ros2 launch sucata launch_sim.launch.py
 ```
 
-**Raspberry Pi setup:**
+**Configuração do Raspberry Pi:**
 
-For the following configurations, it is recommended to connect to the Raspberry Pi through an SSH connection.
+Para as configurações seguintes, é recomendado conectar-se ao Raspberry Pi através de uma conexão SSH.
 
 ```bash
 mkdir -p ros2ws/src
 cd ros2ws/src
 
-# Clone the RPI branch
+# Clonar o branch RPI
 git clone --single-branch --branch RPI https://github.com/Malicancas/sucata.git
 
-# Package for ArUco detection
+# Pacote para deteção ArUco
 git clone https://github.com/JMU-ROBOTICS-VIVA/ros2_aruco.git
 
-# Package for LiDAR
+# Pacote para LiDAR
 git clone https://github.com/Hokuyo-aut/urg_node2.git
 
-# Package for depth camera
+# Pacote para câmara de profundidade
 git clone https://github.com/ros-drivers/openni2_camera
 
 ```
 
 
-**For BLE controller use (Nunchuck):**
+**Para uso do controlador BLE (Nunchuck):**
 
-Clone the repository mentioned below and follow the instructions.
+Clone o repositório mencionado abaixo e siga as instruções.
 ```bash
 git clone https://github.com/Malicancas/nunchuck-BLE
 ```
